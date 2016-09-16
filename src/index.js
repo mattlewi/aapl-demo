@@ -2,13 +2,18 @@ var angular = require('angular');
 var gridster = require('angular-gridster');
 //var jquery.resize = require('jquery.resize');
 
-var price = require('./app/price/price');
+var grid = require('./app/grid/grid');
+var table = require('./app/table/table');
+var chart = require('./app/chart/chart');
 
 require('./index.styl');
 
-var app = 'app';
-module.exports = app;
+var app = angular.module('priceApp', ['gridster']);
 
-angular
-  .module(app, ['gridster'])
-  .component('app', price);
+app.controller('mainCtrl', function($scope) {
+	$scope.datum = 'here i am';
+});;
+
+ app.component('grid', grid);
+ app.component('tableContent', table);
+ app.component('chartContent', chart);

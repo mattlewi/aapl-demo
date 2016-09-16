@@ -1,10 +1,10 @@
 module.exports = {
-  template: require('./price.html'),
-  controller: PriceHistoryController
+  template: require('./grid.html'),
+  controller: GridController
 };
 
 
-function PriceHistoryController() {
+function GridController() {
 	this.hello = 'Hello Apple!';
 
 	this.gridsterOptions = {
@@ -21,13 +21,17 @@ function PriceHistoryController() {
 			row: 0,
 			sizeY: 1,
 			sizeX: 1,
-			name: "Table Data"
+			name: "Table Data",
+			component: "blah1",
+			content: ""
 		}, {
 			col: 1,
 			row: 0,
 			sizeY: 1,
 			sizeX: 1,
-			name: "Chart Data"
+			name: "Chart Data",
+			component: "blah2",
+			content: "app/chart/chart.html"
 		}]
 	};
 }
