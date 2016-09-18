@@ -4,9 +4,18 @@ module.exports = {
 };
 
 
-function GridController() {
-	this.hello = 'Hello Apple!';
-
+function GridController($scope, $log, priceService) {
+/*
+  priceService.getPrices().then(
+    function(data){
+      $scope.priceData = data;
+      $log.info("got my priceData from grid.js");
+    },
+    function(error){
+      $scope.priceData - "Error: " + error;
+    }
+  );
+*/
 	this.gridsterOptions = {
 		margins: [20, 20],
 		columns: 2,
@@ -18,20 +27,10 @@ function GridController() {
 	this.items = {
 		widgets: [{
 			col: 0,
-			row: 0,
-			sizeY: 1,
-			sizeX: 1,
-			name: "Table Data",
-			component: "blah1",
-			content: ""
+			row: 0
 		}, {
 			col: 1,
-			row: 0,
-			sizeY: 1,
-			sizeX: 1,
-			name: "Chart Data",
-			component: "blah2",
-			content: "app/chart/chart.html"
+			row: 0
 		}]
 	};
 }

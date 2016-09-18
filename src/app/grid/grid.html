@@ -1,13 +1,57 @@
+<style>
+.page-header {
+	font-family: Consolas,monaco,monospace;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+.gridster-item {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius:4px;
+	background-color:white;
+}
+
+.gridster-table-item {
+	height:700px !important;
+	width:400px !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	overflow: auto;
+}
+
+.gridster-chart-item {
+	height:700px !important;
+	width:800px !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	overflow: auto;
+}
+
+</style>
+
 <div class="page-header">
 Historical Stock Prices for:<br>
 Apple Inc. - NASDAQ: AAPL
 </div>
 <div gridster="gridsterOptions">
 	<ul>
-		<li gridster-item="widget" style="background-color:white;">
+		<li gridster-item="widget" class="gridster-table-item">
 			<table-content></table-content>
 		</li>
-		<li gridster-item="widget" style="background-color:white;">
+		<li gridster-item="widget" class="gridster-chart-item">
 			<chart-content></chart-content>
 		</li>
 	</ul>

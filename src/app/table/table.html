@@ -1,3 +1,35 @@
+<style>
+table, th , td {
+  	border: 1px solid grey;
+  	border-collapse: collapse;
+  	padding: 5px;
+	font-family: Consolas,monaco,monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+</style> 
+
 <div>
-TABLE
+{{message}}
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Adjusted Close</th>
+	</tr>
+  	<tr ng-repeat="d in tableData">
+	    <td>{{ d.Date }}</td>
+	    <td>{{ d.Adj_Close }}</td>
+  	</tr>
+</table>
 </div>
