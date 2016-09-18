@@ -5,31 +5,17 @@ module.exports = {
 
 
 function GridController($scope, $log, priceService) {
-/*
-  priceService.getPrices().then(
-    function(data){
-      $scope.priceData = data;
-      $log.info("got my priceData from grid.js");
-    },
-    function(error){
-      $scope.priceData - "Error: " + error;
-    }
-  );
-*/
-	this.gridsterOptions = {
+	$scope.gridsterOptions = {
 		margins: [10, 10],
-		columns: 2,
-		colWidth: 'auto',
-		width: 'auto',
 		draggable: {
-			handle: 'h3'
+			handle: 'div'
 		},
+		resizable: false,
 		floating: false,
-		swapping: true,
-		resizable: false
+		swapping: true
 	};
 
-	this.items = {
+	$scope.items = {
 		widgets: [{
 			col: 0,
 			row: 0

@@ -40,7 +40,7 @@ function ChartController($scope, priceService, $log) {
           priceArray.push([new Date(quotes[p].Date).valueOf(),Math.round(new Number(quotes[p].Adj_Close)*100)/100]); 
         }
         $scope.chartData = priceArray;
-        renderChart(priceArray);
+        pushPrices(priceArray);
     },
     function(error){
       $scope.chartData - "Error: " + error;
@@ -48,21 +48,12 @@ function ChartController($scope, priceService, $log) {
   );
   }
 
-  function renderChart(priceData) {
+  function pushPrices(priceData) {
     $scope.chartConfig.series.push({
-      id: 'Adj Close',
+      id: 1,
+      name: 'Adj Close',
       data: priceData
     });
-    $scope.chartConfig.loading = false
+    $scope.chartConfig.loading = false;
   }
-/*
-  priceService.getPrices().then(
-    function(data){
-      $scope.chartData = data;
-    },
-    function(error){
-      $scope.chartData - "Error: " + error;
-    }
-  );
-*/
 }
