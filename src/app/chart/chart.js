@@ -4,7 +4,7 @@ module.exports = {
 };
 
 function ChartController($scope, priceService, $log) {
-  $scope.chartData = "Loading Chart Data";
+  //$scope.chartData = "Loading Chart Data";
 
  $scope.chartConfig = {
         options: {
@@ -23,13 +23,15 @@ function ChartController($scope, priceService, $log) {
             text: 'AAPL Stock Price (Adjusted Close)'
         },
         useHighStocks: true,
-        loading: true
+        loading: false
     }
 
     getPrices();
 
 
   function getPrices() {
+    $scope.chartConfig.loading = "Retrieving Data...";
+
     var priceArray = [];
     priceService.getPrices().then(
       function(data){
@@ -48,7 +50,7 @@ function ChartController($scope, priceService, $log) {
 
   function renderChart(priceData) {
     $scope.chartConfig.series.push({
-      id: 1,
+      id: 'Adj Close',
       data: priceData
     });
     $scope.chartConfig.loading = false

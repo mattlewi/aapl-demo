@@ -4,11 +4,24 @@ table, th , td {
   	border-collapse: collapse;
   	padding: 5px;
 	font-family: Consolas,monaco,monospace;
+	/*font-family: 'Unica One', sans-serif;*/
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
+}
+
+th, td {
+	width:150px;
+	text-align: center;
+}
+
+th {
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #2a2a2b;
+	color: silver;
 }
 
 table tr:nth-child(odd) {
@@ -21,7 +34,6 @@ table tr:nth-child(even) {
 </style> 
 
 <div>
-{{message}}
 <table>
 	<tr>
 		<th>Date</th>
@@ -29,7 +41,7 @@ table tr:nth-child(even) {
 	</tr>
   	<tr ng-repeat="d in tableData">
 	    <td>{{ d.Date }}</td>
-	    <td>{{ d.Adj_Close }}</td>
+	    <td style="padding-left:20px;">${{ d.Adj_Close }}</td>
   	</tr>
 </table>
 </div>

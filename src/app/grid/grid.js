@@ -17,11 +17,16 @@ function GridController($scope, $log, priceService) {
   );
 */
 	this.gridsterOptions = {
-		margins: [20, 20],
+		margins: [10, 10],
 		columns: 2,
+		colWidth: 'auto',
+		width: 'auto',
 		draggable: {
 			handle: 'h3'
-		}
+		},
+		floating: false,
+		swapping: true,
+		resizable: false
 	};
 
 	this.items = {
